@@ -9,6 +9,7 @@ h,w = 512,512
 def create_model():
 
     inputs = tf.keras.layers.Input(shape=(h,w,3))
+    print()
 
     conv1 = tf.keras.layers.Conv2D(16,(3,3),activation='relu',padding='same')(inputs)
     pool1 = tf.keras.layers.MaxPool2D()(conv1)
@@ -69,7 +70,7 @@ labels = labels/255
 model = tf.keras.models.load_model('my_model')
 
 #model = create_model()  # uncomment this to create a new model
-print(model.summary())
+# print(model.summary())
 
 model.compile(optimizer='adam', loss='binary_crossentropy',metrics=['accuracy'])
 model.fit(images,labels,epochs=100,batch_size=10)

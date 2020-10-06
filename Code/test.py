@@ -1,6 +1,5 @@
 import numpy as np
 import cv2
-from google.colab.patches import cv2_imshow
 import os
 import random
 import tensorflow as tf
@@ -62,6 +61,6 @@ for f in files[0:num_cases]:
 
     test_img = test_img.astype(np.uint8)
 
-    cv2_imshow(test_img)
+    cv2.imshow('', test_img)
 
     cv2.waitKey(0)
